@@ -117,18 +117,7 @@ namespace FormulaElection
 
             numriPjeseshem = 100 - numriPlote;
 
-            //for (int i = 0; i < varguDoubleValue.Length - 1; i++)
-            //{
-            //    for (int j = 0; j < varguDoubleValue.Length - 1 - i; j++)
-            //    {
-            //        if (varguDoubleValue[j] < varguDoubleValue[j + 1])
-            //        {
-            //            double temp = varguDoubleValue[j];
-            //            varguDoubleValue[j] = varguDoubleValue[j+1];
-            //            varguDoubleValue[j + 1] = temp;
-            //        }
-            //    }
-            //}
+            
 
             List<int> listaIntValue = new List<int>();
             for (int i = 0; i < listaDoubleValue.Count; i++)
@@ -138,27 +127,13 @@ namespace FormulaElection
 
             for (int i = 0; i < numriPjeseshem; i++)
             {
-                double itemValue = maxElement(listaDoubleValue);
+                double itemValue = Helper.maxElement(listaDoubleValue);
 
                 int index = listaDoubleValue.IndexOf(itemValue);
                 listaDoubleValue[index] = 0;
                 listaIntValue[index] += 1;// itemValue + 1;
             }
 
-            double maxElement(List<double> lista)
-            {
-                double max = 0;
-                double s = 0;
-                for (int i = 0; i < lista.Count; i++)
-                {
-                    if ((lista[i] - (int)lista[i])> max)
-                    {
-                        max = lista[i] - (int)lista[i];
-                        s = lista[i];
-                    }
-                }
-                return s;
-            }
 
             if (s1 >= 5.0)
             {
